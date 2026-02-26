@@ -39,6 +39,12 @@ para gerar o briefing de hoje.
   - Sites BR: Tecmundo, Canaltech, Startups.com.br, Meio & Mensagem
   - Twitter/X: busque posts virais sobre IA no Brasil
   - LinkedIn: trending sobre IA e produtividade
+### Análise de referências
+Busque via web search os perfis listados no bloco PERFIS_REFERENCIA abaixo.
+Identifique: que conteúdos recentes eles postaram? Algum formato novo? 
+Algum ângulo que o Eric pode fazer melhor ou diferente?
+
+{PERFIS_REFERENCIA}
 
 ### Passo 2: Selecione as 5-8 melhores pautas
 Critérios (em ordem de importância):
@@ -115,6 +121,39 @@ Baseado no calendário editorial:
 - Segunda: Notícia quente + opinião (Reels)
 - Terça: Tutorial/ferramenta de IA (Carrossel)
 - Quarta: Provocação/debate (Estático)
+
+## 📐 TEMPLATES DE CARROSSEL (use um desses para cada carrossel sugerido)
+
+### Template 1: "Choque de Realidade"
+- Slide 1 (capa): Afirmação polêmica ou dado chocante
+- Slide 2: "Deixa eu te explicar..."
+- Slide 3-4: Contexto e fatos
+- Slide 5-6: O que isso significa pra você
+- Slide 7: O que fazer agora (ação prática)
+- Slide 8: CTA (salva pra não esquecer / comenta sua opinião)
+
+### Template 2: "X coisas que você precisa saber"
+- Slide 1 (capa): "5 coisas sobre [tema] que ninguém te conta"
+- Slide 2-6: Uma coisa por slide (número + frase curta + explicação em 2 linhas)
+- Slide 7: Resumo ou bônus extra
+- Slide 8: CTA (compartilha com alguém que precisa ver isso)
+
+### Template 3: "Tutorial Rápido"
+- Slide 1 (capa): "Como fazer [resultado] em [tempo] com IA"
+- Slide 2: O problema / antes
+- Slide 3: A ferramenta / solução
+- Slide 4-6: Passo a passo (1 passo por slide, bem visual)
+- Slide 7: Resultado final / depois
+- Slide 8: CTA (salva esse tutorial / link na bio)
+
+### Template 4: "Antes vs Depois da IA"
+- Slide 1 (capa): "Você ainda faz [tarefa] manualmente?"
+- Slide 2: Como era antes (lento, manual, chato)
+- Slide 3: O que mudou (ferramenta ou técnica nova)
+- Slide 4-5: Demonstração prática do resultado
+- Slide 6: Tempo/dinheiro economizado
+- Slide 7: Como começar (passo 1)
+- Slide 8: CTA (comenta "EU QUERO" que te mando o tutorial completo)
 - Quinta: Case real/antes e depois (Reels ou Carrossel)
 - Sexta: Curadoria "5 ferramentas da semana" (Carrossel)
 - Sábado: Bastidores/meme tech (Stories/Reels curto)
