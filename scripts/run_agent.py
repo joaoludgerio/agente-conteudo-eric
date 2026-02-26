@@ -86,9 +86,18 @@ def build_full_prompt(reddit_data, hn_data):
 ---
 """
 
+    # Carrega perfis de referência
+    try:
+        perfis_path = os.path.join(BASE_DIR, "context", "perfis-referencia.md")
+        with open(perfis_path, "r") as f:
+            perfis = f.read()
+    except FileNotFoundError:
+        perfis = "*Nenhum perfil de referência cadastrado.*"
+
     # Substitui placeholders
     full_prompt = prompt_template.replace("{DATA_HOJE}", TODAY)
     full_prompt = full_prompt.replace("{DADOS_COLETADOS}", dados_coletados)
+    full_prompt = full_prompt.replace("{PERFIS_REFERENCIA}", perfis)
 
     return full_prompt
 
