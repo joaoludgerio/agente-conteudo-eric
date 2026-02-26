@@ -106,7 +106,7 @@ def run_claude(prompt):
             ],
             capture_output=True,
             text=True,
-            timeout=300,  # 5 minutos max
+            timeout=600,  # 10 minutos max
             env=os.environ,
         )
 
