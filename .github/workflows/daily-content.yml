@@ -1,0 +1,60 @@
+name: Agente Diário de Conteúdo
+
+on:
+  schedule:
+    # 10:00 UTC = 07:00 BRT (horário de Brasília)
+    - cron: '0 10 * * *'
+  workflow_dispatch:  # Permite executar manualmente pelo GitHub
+
+jobs:
+  generate-content:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      # 1. Checkout do repositório
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2. Setup Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # 3. Instalar dependências Python
+      - name: Install Python dependencies
+        run: pip install requests
+
+      # 4. Setup Node.js (necessário para Claude Code)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 5. Instalar Claude Code
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      # 6. Executar o agente
+      - name: Run Content Agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/run_agent.py
+
+      # 7. Commit do relatório no repositório
+      - name: Commit Report
+        run: |
+          git config user.name "Content Agent Bot"
+          git config user.email "agent@ericluciano.com"
+          git add reports/ context/
+          git commit -m "📰 Briefing $(date +%Y-%m-%d)" || echo "Nenhuma alteração"
+          git push
